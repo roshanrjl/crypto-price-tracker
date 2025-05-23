@@ -14,6 +14,8 @@ function Home() {
 
   useEffect(() => {
     dispatch(fetchPrice(currency));
+
+    
   }, [currency, dispatch]);
 
   
