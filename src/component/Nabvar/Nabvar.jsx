@@ -38,19 +38,19 @@ function Nabvar() {
             to="/features"
             className="text-white hover:text-blue-600 font-medium transition"
           >
-            Features
+           Trending
           </Link>
           <Link
-            to="/pricing"
+            to="/watchlist"
             className="text-white hover:text-blue-600 font-medium transition"
           >
-            Pricing
+           Watchlist
           </Link>
           <Link
             to="/blog"
             className="text-white hover:text-blue-600 font-medium transition"
           >
-            Blog
+           Trade
           </Link>
         </div>
 
