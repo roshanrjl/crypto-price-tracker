@@ -1,10 +1,11 @@
-import { createBrowserRouter,} from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home";
 import Features from "../pages/Features";
 import Layout from "../Layout";
 import Coin from "../pages/Coin/Coin";
 import Watchlist from "../pages/Watchlist/"; 
-
+import ProtectedRoute from "./ProtectedRoute";
+import Login from "../component/login"
 
 const router = createBrowserRouter([
   {
@@ -16,16 +17,24 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/features",
+        path: "features",
         element: <Features />,
       },
       {
-        path: "/coin/:id",
+        path: "coin/:id",
         element: <Coin />,
       },
       {
-        path:"watchlist",
-        element:<Watchlist />
+        path: "watchlist",
+        element: (
+          <ProtectedRoute>
+            <Watchlist />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path:"login",
+        element:<Login />
       }
     ],
   },

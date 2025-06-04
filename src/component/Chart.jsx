@@ -3,8 +3,8 @@ import { Chart } from "react-google-charts";
 
 const options = {
   chart: {
-    title: "Company Performance",
-    subtitle: "Sales and Expenses over the Years",
+    title: "price chart",
+    subtitle: "price curve of currency in last ten days",
   },
 };
 
@@ -28,8 +28,8 @@ function Charts({ historicalData }) {
   return (
     <Chart
       chartType="Line"
-      width="100%"
-      height="400px"
+      width="120%"
+      height="600px"
       data={data}
       options={options}
     />
