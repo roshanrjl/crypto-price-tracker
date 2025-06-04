@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useState } from "react"; 
 import { setcurrency } from "../../redux/priceslice";
+import Button from "../Button"
 
 
 function Nabvar() {
@@ -69,9 +70,12 @@ function Nabvar() {
         </div>
 
         <div className="hidden md:block">
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
-            sign up
-          </button>
+          < Button
+           Childern="login"
+           className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition" 
+           />
+            
+          
         </div>
 
         <div className="md:hidden">
