@@ -1,3 +1,6 @@
+
+//fetching data from CoinGecko API using React
+
 const {loading, setLoading} = useState(true);
 useEffect({
   const options = {
@@ -34,3 +37,24 @@ const fetchData = await fetch(
     </div>
   );
 }
+
+displaying navbar with loop 
+
+ const navItems =[
+    {
+      name:"Home",
+      slug:"/",
+      active:true,
+    },
+    {
+      name:"Trending",
+      slug:"/features",
+      active:true,
+    },
+    {
+      name:"watchlist",
+      slug:"/watchlist",
+      active:true,
+    },
+  
+  ]
