@@ -3,12 +3,15 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { fetchPrice } from '../../redux/priceslice';
 import Charts from '../../component/Chart';
+import {addToWatchlist} from '../../redux/watchlistSlice'
+
 
 function Coin() {
   const { id } = useParams();
   const dispatch = useDispatch();
   const { price, loading, error, currency } = useSelector(state => state.storeprice);
   const [historicalData, setHistoricalData] = useState(null);
+  const { isloggedin} = useSelector((state)=>state.authslices);
 
   const fetchHistoricalData = async () => {
     try {
@@ -22,15 +25,25 @@ function Coin() {
     }
   };
 
-  // Run once on mount to fetch chart data (fixed to usd)
+  
   useEffect(() => {
-    fetchHistoricalData();
+    fetchHistoricalData(price);
   }, []);
 
-  // Refetch price whenever currency changes
+  
   useEffect(() => {
     dispatch(fetchPrice(currency));
   }, [dispatch, currency]);
+
+
+  const handlebutton =(coin)=>{
+    if(isloggedin){
+
+      dispatch(addToWatchlist(coin))
+    }else{
+      alert("you need to login to add the crypto to your watchlist");
+    }
+  }
 
   const coin = price.find((item) => item.id === id);
 
@@ -48,7 +61,9 @@ function Coin() {
         <p className="text-lg mb-2">Market Cap: {currency} {coin.market_cap}</p>
         <p className="text-lg mb-4">24h Change: {coin.price_change_percentage_24h}%</p>
         <button
-          type="submit"
+          type="button"
+          onClick={()=>handlebutton(coin)}
+
           className="bg-blue-400 text-black font-bold rounded-md px-4 py-2 hover:bg-blue-700 hover:text-white"
         >
           + Add to Watchlist
