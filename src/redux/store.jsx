@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import price from './priceslice';
 import mylist from './watchlistSlice';
 import Authslices from './authslice';
+import Currencyslice from './currenyslice'
 
 // Load watchlist from localStorage if available
 const loadWatchlist = () => {
@@ -34,6 +35,7 @@ const store = configureStore({
     storeprice: price,
     watchlist: mylist,
     authslices: Authslices,
+    currency:Currencyslice
   },
   preloadedState: {
     watchlist: persistedWatchlist,
