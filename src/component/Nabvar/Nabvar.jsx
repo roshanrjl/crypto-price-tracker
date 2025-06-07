@@ -6,6 +6,7 @@ import { useState } from "react";
 import { setcurrency } from "../../redux/priceslice";
 import Button from "../Button";
 import LogoutBtn from "./LogoutBtn";
+import Select from "../Select";
 
 function Nabvar() {
   const userStatus = useSelector((state) => state.authslices.isloggedin);
@@ -57,17 +58,14 @@ function Nabvar() {
         </div>
 
         <div>
-          <select
-            name="currency"
-            id="currency"
+          <Select
+            
             onChange={handleCurrencyChange}
             value={currency}
             className="block w-full md:w-auto px-4 py-2 text-white bg-blue-300 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
-          >
-            <option value="usd">USD</option>
-            <option value="eur">EURO</option>
-            <option value="npr">NPR</option>
-          </select>
+            option={['usd','eur']}
+            
+         />
         </div>
 
         <div>
