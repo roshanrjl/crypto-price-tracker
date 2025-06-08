@@ -7,7 +7,7 @@ function ProtectedRoute({ children }) {
   console.log("authslice",loginStatus)
     
   if (!loginStatus) {
-    return <Navigate to="/login" replace />;    
+    return <Navigate to="/onaccess" replace />;    
   }
 
   return children;                              

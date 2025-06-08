@@ -7,6 +7,7 @@ import Watchlist from "../pages/Watchlist/";
 import ProtectedRoute from "./ProtectedRoute";
 import Login from "../component/Login"
 import Signup from "../component/Signup";
+import Noaccess from "../component/Noacces"
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path:"signup",
         element:<Signup />
+      },
+      {
+        path:"onaccess",
+        element:<Noaccess />
       }
     ],
   },
