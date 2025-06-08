@@ -5,7 +5,8 @@ import Layout from "../Layout";
 import Coin from "../pages/Coin/Coin";
 import Watchlist from "../pages/Watchlist/"; 
 import ProtectedRoute from "./ProtectedRoute";
-import Login from "../component/login"
+import Login from "../component/Login"
+import Signup from "../component/Signup";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path:"login",
         element:<Login />
+      },
+      {
+        path:"signup",
+        element:<Signup />
       }
     ],
   },
