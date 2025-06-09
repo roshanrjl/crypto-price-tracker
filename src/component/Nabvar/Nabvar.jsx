@@ -55,7 +55,7 @@ function Navbar() {
             Home
           </Link>
           <Link
-            to="/features"
+            to="/treding"
             className="text-white hover:text-blue-600 font-medium transition"
           >
             Trending
